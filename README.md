@@ -1,1 +1,1 @@
-# partners-api-service
+# api-service

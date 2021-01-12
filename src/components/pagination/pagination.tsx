@@ -17,10 +17,16 @@ export const TablePagination: FC<TablePaginationProps> = ({
   for (let i = 0; i < pageCount; i++) {
     items.push(i);
   }
+  const handleFirstPageClick = () => changePage(0);
+  const handleLastPageClick = () => changePage(pageCount - 1);
+  const handlePrevPageClick = () => changePage(currentPage - 1);
+  const handleNextPageClick = () => changePage(currentPage + 1);
 
   return (
     <div>
       <Pagination>
+        <Pagination.First onClick={handleFirstPageClick} />
+        <Pagination.Prev onClick={handlePrevPageClick} />
         {items.map((item) => {
           const handleClick = () => changePage(item);
 
@@ -34,6 +40,8 @@ export const TablePagination: FC<TablePaginationProps> = ({
             </Pagination.Item>
           );
         })}
+        <Pagination.Next onClick={handleNextPageClick} />
+        <Pagination.Last onClick={handleLastPageClick} />
       </Pagination>
     </div>
   );

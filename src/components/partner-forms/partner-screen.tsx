@@ -18,11 +18,6 @@ import {
 } from "../../api/domain";
 import { PartnerValidity } from "../../api/domain/partner";
 
-
-
-
-
-
 export interface PartnerProps {
   partner?: Partner;
   partnerUpdate(partner: Partial<Partner>): void;
@@ -34,24 +29,27 @@ export const PartnerScreen: FC<PartnerProps> = ({
   partnerUpdate,
   partnerValidation,
 }) => {
-  const initialPartnerTypeValue: PartnerType  = partner?.partnerType || PartnerType.naturalPerson;
+  const initialPartnerTypeValue: PartnerType =
+    partner?.partnerType || PartnerType.naturalPerson;
 
   const [changedPartner, setChangedPartner] = useState<Partial<Partner>>(
-    partner || {partnerType: initialPartnerTypeValue}
+    partner || { partnerType: initialPartnerTypeValue }
   );
-  const [partnerTypeState, setPartnerTypeState] = useState<PartnerType>(initialPartnerTypeValue);
+  const [partnerTypeState, setPartnerTypeState] = useState<PartnerType>(
+    initialPartnerTypeValue
+  );
 
   const onPartnerTypeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const partnerType = event.target.value as PartnerType;
-    setChangedPartner({...changedPartner, ...{partnerType}})
+    setChangedPartner({ ...changedPartner, ...{ partnerType } });
     setPartnerTypeState(partnerType);
   };
 
   const handleUpdate = () => {
-    console.log(changedPartner)
+    console.log(changedPartner);
     partnerUpdate(changedPartner);
   };
-  
+
   const handleCompanyInfoChange = (companyInfo: CompanyInfo) => {
     setChangedPartner({ ...changedPartner, ...{ companyInfo } });
   };
@@ -67,9 +65,6 @@ export const PartnerScreen: FC<PartnerProps> = ({
   const handleAddressInfoChange = (addressInfo: AddressInfo) => {
     setChangedPartner({ ...changedPartner, ...{ addressInfo } });
   };
-
-
-
 
   return (
     <>
@@ -102,7 +97,7 @@ export const PartnerScreen: FC<PartnerProps> = ({
             onPersonalInfoChange={handlePersonalInfoChange}
           />
         )}
-        
+
         <ContactInfoForm
           validationInfo={partnerValidation?.contactInfo}
           contactInfo={partner?.contactInfo}
@@ -114,7 +109,7 @@ export const PartnerScreen: FC<PartnerProps> = ({
           onAddressInfoChange={handleAddressInfoChange}
         />
         <div className="pull-right">
-          <Link to={"/"}>
+          <Link to={"/partners/"}>
             {" "}
             <Button variant="secondary" className="cancel__button">
               Отмена

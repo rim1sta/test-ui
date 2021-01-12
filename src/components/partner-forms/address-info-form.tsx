@@ -22,7 +22,9 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
 }) => {
   const [city, setCity] = useState(addressInfo?.city || "");
   const [street, setStreet] = useState(addressInfo?.street || "");
-  const [houseNumber, setHouseNumber] = useState(addressInfo?.houseNumber || "");
+  const [houseNumber, setHouseNumber] = useState(
+    addressInfo?.houseNumber || ""
+  );
   const [idx, setIdx] = useState(addressInfo?.idx || "");
 
   const getCurrentAddressInfo = (): AddressInfo => ({
@@ -51,7 +53,7 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
     onAddressInfoChange(ai);
   };
   const onIdxChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const idx = event.target.value
+    const idx = event.target.value;
     setIdx(idx);
     const ai = { ...getCurrentAddressInfo(), ...{ idx } };
     onAddressInfoChange(ai);

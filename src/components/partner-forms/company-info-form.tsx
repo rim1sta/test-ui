@@ -23,7 +23,9 @@ export const CompanyInfoForm: FC<CompanyInfoFormProps> = ({
   const [foundationYear, setFoundationYear] = useState(
     companyInfo?.foundationYear || 0
   );
-  const [numEmployees, setNumEmployees] = useState(companyInfo?.numEmployees || 0);
+  const [numEmployees, setNumEmployees] = useState(
+    companyInfo?.numEmployees || 0
+  );
 
   const getCurrentCompanyInfo = (): CompanyInfo => ({
     name,
@@ -40,7 +42,7 @@ export const CompanyInfoForm: FC<CompanyInfoFormProps> = ({
 
   const onFoundationYear = (event: ChangeEvent<HTMLInputElement>) => {
     let foundationYear = parseInt(event.target.value);
-    foundationYear = isNaN(foundationYear) ? 0 : foundationYear
+    foundationYear = isNaN(foundationYear) ? 0 : foundationYear;
     setFoundationYear(foundationYear);
     const ci = { ...getCurrentCompanyInfo(), ...{ foundationYear } };
     onCompanyInfoChange(ci);

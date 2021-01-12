@@ -1,4 +1,4 @@
-const regExpEmail: RegExp = /[(a-z)0-9\._-]+([a-z0-9])?@[a-z0-9-]+\.[a-z]{2,}(\.[a-z]{2,})?/;
+const regExpEmail: RegExp = /[(a-z)0-9_-]+([a-z0-9])?@[a-z0-9-]+\.[a-z]{2,}(\.[a-z]{2,})?/;
 const regExpPhone: RegExp = /(8|\+7)((\(\d{3}\)\s?\d{3}-\d{2}-\d{2})|(\s\d{3}-\d{3}-\d{2}-\d{2})|(\d{10}))/; 
 
 
@@ -11,7 +11,7 @@ export interface ContactInfo {
 
 export type ContactInfoValidation = {[key in keyof ContactInfo]?: boolean};
 
-export const contactInfoValidation = (contactInfo: ContactInfo) => {
+export const contactInfoValidation = (contactInfo?: ContactInfo) => {
 
 const result: ContactInfoValidation = {};
 if(!!contactInfo?.email && regExpEmail.test(contactInfo?.email)){

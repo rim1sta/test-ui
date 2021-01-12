@@ -52,9 +52,9 @@ export const ContactInfoForm: FC<ContactInfoProps> = ({
             <Form.Control
               type="email"
               placeholder="Электронная почта"
-              value={email}   
+              value={email}
               onChange={onEmailChange}
-              isInvalid={!!validationInfo ? !validationInfo.email : false} 
+              isInvalid={!!validationInfo ? !validationInfo.email : false}
               required
             />
             <Form.Control.Feedback type="invalid">

@@ -6,6 +6,7 @@ import { createSlice, PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit"
 
 
 export interface PartnerState {
+searchValue?: string;    
 pageData?: PartnersPage;
 pageIndex: number;
 editablePartner?: Partner;
@@ -21,8 +22,14 @@ updatedPartner?: Partner;
     initialState: {
         pageIndex: 0,
         partnerToRemove: null,
+        searchValue: "",
     }, 
     reducers: {
+        setSearchValue(state: PartnerState,action: PayloadAction<string>): PartnerState {
+            const searchValue: string = action.payload;
+            const newState: PartnerState = {...state, searchValue}
+            return newState;
+        },
         setPageIndex(state: PartnerState, action: PayloadAction<number>): PartnerState {
             const pageIndex: number = action.payload;
             const newState: PartnerState = {...state, pageIndex};
@@ -56,7 +63,7 @@ updatedPartner?: Partner;
             const updatedPartner: Partner = action.payload;
             const newState: PartnerState = {...state, updatedPartner};
             return newState;
-        }
+        },
         
     }
        

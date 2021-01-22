@@ -66,6 +66,7 @@ export const CompanyInfoForm: FC<CompanyInfoFormProps> = ({
           </Form.Label>
           <Col sm="10">
             <Form.Control
+              className="t_company-name"
               type="text"
               onChange={onNameChange}
               value={name}
@@ -84,10 +85,11 @@ export const CompanyInfoForm: FC<CompanyInfoFormProps> = ({
           </Form.Label>
           <Col sm="10">
             <Form.Control
+            className="t_company-foundationYear"
               onChange={onFoundationYear}
               value={foundationYear}
               isInvalid={
-                !!validationInfo ? validationInfo.foundationYear : false
+                !!validationInfo ? !validationInfo.foundationYear : false
               }
               placeholder="Год основания"
               type="text"
@@ -104,6 +106,7 @@ export const CompanyInfoForm: FC<CompanyInfoFormProps> = ({
           </Form.Label>
           <Col sm="10">
             <Form.Control
+            className="t_company-numEmployes"
               type="number"
               isInvalid={
                 !!validationInfo ? !validationInfo.numEmployees : false

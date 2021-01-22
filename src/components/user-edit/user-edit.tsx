@@ -20,7 +20,7 @@ export const UserEdit: FC<{ id: string }> = ({ id }) => {
 
   useEffect(() => {
     dispatch(openUserForEdit(id));
-  }, []);
+  }, [dispatch, id]);
 
   const update = (user: User) => {
     const userValidation: ContactInfoValidation = contactInfoValidation(

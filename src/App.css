@@ -78,8 +78,19 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-
+.login__container{
+  border: 1px solid #007bff;;
+  border-radius: 16px;
+  margin-top: 200px;
+  width: 360px !important;
+  padding: 16px;
+  padding-bottom: 48px;
+}
+.exit__button{
+  position: absolute;
+  top: 1px;
+  right: 15px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

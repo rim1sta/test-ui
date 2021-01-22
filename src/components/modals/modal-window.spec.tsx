@@ -6,7 +6,7 @@ import { Modal } from 'react-bootstrap';
 
 
 
-describe('ModalWindow component', () => {
+describe('ModalWindow component test', () => {
 
     const mockFn: jest.Mock = jest.fn();
     let wrapper: ShallowWrapper;
@@ -27,7 +27,7 @@ describe('ModalWindow component', () => {
         body = wrapper.find(Modal.Body);
         bodyText = body.find('p');
         
-        expect(bodyText.text()).toBe('abcdef')      
+        expect(bodyText.text()).toBe('abcdef');      
     });
     it('test button arg true', () => {
         expect(mockFn).not.toHaveBeenCalled();

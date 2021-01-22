@@ -30,13 +30,13 @@ export const ContactInfoForm: FC<ContactInfoProps> = ({
   const onEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const email = event.target.value;
     setEmail(email);
-    const ci = { ...getCurrentContactInfo(), ...{ email } };
+    const ci = { ...getCurrentContactInfo(),  email  };
     onContactInfoChange(ci);
   };
   const onPhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
     const phone = event.target.value;
     setPhone(phone);
-    const ci = { ...getCurrentContactInfo(), ...{ phone } };
+    const ci = { ...getCurrentContactInfo(), phone  };
     onContactInfoChange(ci);
   };
 
@@ -54,6 +54,7 @@ export const ContactInfoForm: FC<ContactInfoProps> = ({
               placeholder="Электронная почта"
               value={email}
               onChange={onEmailChange}
+              className="t_contact-email"
               isInvalid={!!validationInfo ? !validationInfo.email : false}
               required
             />
@@ -70,6 +71,7 @@ export const ContactInfoForm: FC<ContactInfoProps> = ({
             <Form.Control
               type="phone"
               placeholder="Телефон"
+              className="t_contact-phone"
               value={phone}
               isInvalid={!!validationInfo ? !validationInfo.phone : false}
               onChange={onPhoneChange}

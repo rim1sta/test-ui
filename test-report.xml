@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/rim1sta/Desktop/react-api-1/src/components/pagination/pagination.spec.tsx">
+    <testCase name="Pagination component test number of items test" duration="39"/>
+    <testCase name="Pagination component test test currentPage number" duration="25"/>
+    <testCase name="Pagination component test test first page click" duration="8"/>
+    <testCase name="Pagination component test test prev page click" duration="8"/>
+    <testCase name="Pagination component test test next page click" duration="10"/>
+    <testCase name="Pagination component test test last page click" duration="8"/>
+  </file>
+  <file path="/Users/rim1sta/Desktop/react-api-1/src/components/modals/modal-window.spec.tsx">
+    <testCase name="ModalWindow component test test body text" duration="34"/>
+    <testCase name="ModalWindow component test test button arg true" duration="6"/>
+    <testCase name="ModalWindow component test test button arg false" duration="5"/>
+  </file>
+</testExecutions>

@@ -74,6 +74,7 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
               value={city}
               placeholder="Город"
               required
+              className="t_address-city"
               onChange={onCityChange}
             />
             <Form.Control.Feedback type="invalid">
@@ -92,6 +93,7 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
               value={street}
               type="text"
               required
+              className="t_address-street"
               placeholder="Улица"
             />
             <Form.Control.Feedback type="invalid">
@@ -109,6 +111,7 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
               value={houseNumber}
               isInvalid={!!validationInfo ? !validationInfo.houseNumber : false}
               type="string"
+              className="t_address-houseNumber"
               placeholder="Номер дома"
               required
             />
@@ -128,6 +131,7 @@ export const AddressInfoForm: FC<AddressInfoFormProps> = ({
               isInvalid={!!validationInfo ? !validationInfo.idx : false}
               placeholder="Индекс"
               required
+              className="t_address-idx"
               value={idx}
             />
             <Form.Control.Feedback type="invalid">

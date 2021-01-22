@@ -46,7 +46,6 @@ export const PartnerScreen: FC<PartnerProps> = ({
   };
 
   const handleUpdate = () => {
-    console.log(changedPartner);
     partnerUpdate(changedPartner);
   };
 

@@ -5,8 +5,6 @@ import { ApiServiceImpl } from './../../api/api-service';
 import { Dispatch } from "@reduxjs/toolkit";
 
 
-
-
 export const updatePage = (pageIndex: number, searchValue?:string) => {
     return async (dispatch: Dispatch) => {
         
@@ -38,13 +36,13 @@ export const openPartnerForEdit = (id: string) => {
     return async (dispatch: Dispatch) => {
         const res = await ApiServiceImpl.instance.getPartner(id)
             dispatch(partnerSlice.actions.setEditablePartner(res));
-    }
+    };
 };
 
 export const partnerToDelete = (partnerShortInfo: PartnerShortInfo | null) => {
     return  (dispatch: Dispatch) => {
        dispatch(partnerSlice.actions.setPartnerToRemove(partnerShortInfo));
-    }
+    };
 };
 
 
@@ -54,7 +52,7 @@ export const partnerToUpdate = (partner: Partner) => {
         console.log(res);
         window.location.href = "/partners";
         dispatch(partnerSlice.actions.clearEditablePartner(null));
-    }
+    };
 };
 
 export const partnerToCreate = (partner: Partner) => {
@@ -62,7 +60,7 @@ export const partnerToCreate = (partner: Partner) => {
         const res = await ApiServiceImpl.instance.createPartner(partner);
         console.log(res);
         window.location.href = "/partners";
-    }
+    };
 };
 
 

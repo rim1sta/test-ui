@@ -14,7 +14,6 @@ export const SearchInput: FC<SearchInputProps> = ({ search, searchChange }) => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    console.log("value", value);
     setSearchValue(value);
     searchChangeDebounced(value);
   };

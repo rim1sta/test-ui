@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { FC } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -84,6 +83,7 @@ export const PersonalInfoForm: FC<PersonalInfoFormProps> = ({
               type="text"
               placeholder="Фамилия"
               onChange={onLastNameChange}
+              className="t_personal-lastName"
               value={lastName}
               isInvalid={!!validationInfo ? !validationInfo.lastName : false}
               required
@@ -103,6 +103,7 @@ export const PersonalInfoForm: FC<PersonalInfoFormProps> = ({
               placeholder="Имя"
               onChange={onFirstNameChange}
               value={firstName}
+              className="t_personal-firstName"
               isInvalid={!!validationInfo ? !validationInfo.firstName : false}
               required
             />
@@ -121,6 +122,7 @@ export const PersonalInfoForm: FC<PersonalInfoFormProps> = ({
               placeholder="Отчество"
               onChange={onMiddleNameChange}
               value={middleName}
+              className="t_personal-middleName"
               isInvalid={!!validationInfo ? !validationInfo.middleName : false}
               required
             />
@@ -159,6 +161,7 @@ export const PersonalInfoForm: FC<PersonalInfoFormProps> = ({
               as="select"
               isInvalid={!!validationInfo ? !validationInfo.gender : false}
               value={gender}
+              className="t_personal-gender"
               onChange={onGenderChange}
             >
               <option value={Gender.male}>мужской</option>

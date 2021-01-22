@@ -9,8 +9,10 @@ export interface ModalWindowProps {
 }
 
 export const ModalWindow: FC<ModalWindowProps> = ({ text, onClose }) => {
+
+  
   return (
-    <Modal centered onHide={() => {}} show={true}>
+    <Modal centered onHide={() => onClose(false)} show={true}>
       <Modal.Header>
         <Modal.Title>Предупреждение</Modal.Title>
       </Modal.Header>

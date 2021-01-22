@@ -11,7 +11,7 @@ export const PasswordEdit: FC<{ id?: string }> = ({ id }) => {
   const [dublicateEditedPassword, setDublicateEditedPassword] = useState("");
   const dispatch = useDispatch();
 
-  const isPasswordsMatch = () => {
+  const doPasswordsMatch = () => {
     if (editedPassword === dublicateEditedPassword) {
       return true;
     } else {
@@ -30,10 +30,9 @@ export const PasswordEdit: FC<{ id?: string }> = ({ id }) => {
   };
 
   const handleUpdate = () => {
-    if (isPasswordsMatch()) {
+    if (doPasswordsMatch()) {
       dispatch(passwordToEdit(editedPassword, id));
-    }
-    console.log(editedPassword);
+    };
   };
 
   return (
@@ -47,7 +46,7 @@ export const PasswordEdit: FC<{ id?: string }> = ({ id }) => {
             </Form.Label>
             <Form.Control
               type="password"
-              className="mx-sm-3"
+              className="mx-sm-3 t_password"
               id="inputPassword1"
               aria-describedby="passwordHelpInline"
               value={editedPassword}
@@ -61,12 +60,12 @@ export const PasswordEdit: FC<{ id?: string }> = ({ id }) => {
             <Form.Label htmlFor="inputPassword6">Повторите пароль</Form.Label>
             <Form.Control
               type="password"
-              className="mx-sm-3"
+              className="mx-sm-3 t_password-repeat"
               id="inputPassword2"
               aria-describedby="passwordHelpInline"
               value={dublicateEditedPassword}
               onChange={onSecondPasswordChange}
-              isInvalid={!isPasswordsMatch()}
+              isInvalid={!doPasswordsMatch()}
             />
             <Form.Control.Feedback type="invalid">
               Пароли не совпадают

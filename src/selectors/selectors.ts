@@ -1,10 +1,11 @@
+import { LoginState } from './../store/slices/login';
 import { UserState } from './../store/slices/user';
 import { PartnerState } from './../store/slices/partner';
 import { createSelector, Store } from "@reduxjs/toolkit";
 
 export const getPartnerState = (store: Store) => (store as any).partnerSlice as PartnerState;
 export const getUserState = (store: Store) => (store as any).userSlice as UserState;
-
+export const getLoginState = (store: Store) => (store as any).loginSlice as LoginState;
 
 
 export const getCurrentPage = createSelector(getPartnerState, state => state.pageIndex);
@@ -21,3 +22,5 @@ export const getUserToUpdate = createSelector(getUserState, state => state.updat
 export const getEditableUser = createSelector(getUserState, state => state.editableUser);
 export const getLoginValue = createSelector(getUserState, state => state.createdLogin);
 export const getLoginValid = createSelector(getUserState, state => state.checkedLogin);
+export const getToken = createSelector(getLoginState, state => state.token);
+export const getIsLoginError = createSelector(getLoginState, state => state.isError);

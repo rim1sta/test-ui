@@ -27,7 +27,7 @@ export const CreateUserForm: FC<UserProps> = ({
   loginValue,
   loginChange,
 }) => {
-  const [login, setLoginValue] = useState(loginValue);
+  const [login, setLoginValue] = useState(user?.login);
   const [editedPassword, setEditedPassword] = useState("");
   const [dublicateEditedPassword, setDublicateEditedPassword] = useState("");
   const [changedUser, setChangedUser] = useState<Partial<User>>();
@@ -85,7 +85,7 @@ export const CreateUserForm: FC<UserProps> = ({
               <Form.Control
                 type="text"
                 placeholder="введите ваш логин"
-                value={user?.login}
+                value={user?.loginInfo?.login}
                 onChange={handleLoginChange}
                 isInvalid={loginValid}
                 required

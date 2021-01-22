@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FC } from "react";
+import React, { useState, FC } from "react";
 import { Link } from "react-router-dom";
 import { User } from "../../api/domain/user";
 import { Container } from "react-bootstrap";
@@ -19,11 +19,10 @@ export const UserFormScreen: FC<UserProps> = ({
   user,
   userToUpdate,
   userValidation,
+  
 }) => {
   const [changedUser, setChangedUser] = useState<User>(user);
   
-console.log("login", user.login)
-
   const handleUpdate = () => {
     console.log(changedUser);
     userToUpdate(changedUser);
@@ -43,9 +42,9 @@ console.log("login", user.login)
           <Col sm="10">
             <Form.Control
               type="text"
-              placeholder={user.login}
+              placeholder={user.loginInfo?.login}
               readOnly
-              value={user.login}
+              value={user.loginInfo?.login}
               required
             />
           </Col>

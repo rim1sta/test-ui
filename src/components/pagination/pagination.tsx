@@ -38,7 +38,7 @@ export const TablePagination: FC<TablePaginationProps> = ({
             >
               {item + 1}
             </Pagination.Item>
-          );
+          )
         })}
         <Pagination.Next onClick={handleNextPageClick} />
         <Pagination.Last onClick={handleLastPageClick} />
